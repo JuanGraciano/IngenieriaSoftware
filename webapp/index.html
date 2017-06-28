@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Paquete Express BackOffice</title>
+    <link type="text/css" rel="stylesheet" href="/vendors/bootstrap/dist/css/bootstrap.css" />
+    <!-- <link type="text/css" rel="stylesheet" href="/vendors/bootstrap/dist/css/bootstrap-theme.css" /> -->
+    <link type="text/css" rel="stylesheet" href="/resources/css/paper-theme.css" />
+    <link type="text/css" rel="stylesheet" href="/vendors/angular-bootstrap/ui-bootstrap-csp.css" />
+
+    <link href="/vendors/toastr/toastr.css" rel="stylesheet"/>
+    <!--Let browser know website is optimized for mobile-->
+    <link type="text/css" rel="stylesheet" href="/resources/css/webapp.css" />
+    <link type="text/css" rel="stylesheet" href="/resources/css/dashboard.css" />
+</head>
+
+<body  ng-app="webapp">
+    <div ui-view></div>
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="/vendors/bootstrap/dist/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/vendors/toastr/toastr.js"></script>
+    <script type="text/javascript" src="resources/js/utils.js"></script>
+    <script type="text/javascript" src="/vendors/angular/angular.js"></script>
+    <script type="text/javascript" src="/vendors/angular/angular-animate.js"></script>
+    <script type="text/javascript" src="/vendors/angular/angular-touch.js"></script>
+    <script type="text/javascript" src="/vendors/angular-resource/angular-resource.js"></script>
+    <script type="text/javascript" src="/vendors/angular-ui-router/release/angular-ui-router.js"></script>
+    <script type="text/javascript" src="/vendors/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script type="text/javascript" src="/vendors/ngstorage/ngStorage.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+
+    <!-- Services -->
+    <script type="text/javascript" src="/services/ApiHandler.js"></script>
+    <script type="text/javascript" src="/services/APIHttpHandler.js"></script>
+    <script type="text/javascript" src="/services/UserManager.js"></script>
+
+    <!-- Config -->
+    <script type="text/javascript" src="/config/app.js"></script>
+    <script type="text/javascript" src="/config/router.js"></script>
+
+    <!-- Controllers -->
+    <script type="text/javascript" src="/controllers/UserController.js"></script>
+    <script type="text/javascript" src="/controllers/UserListController.js"></script>
+    <script type="text/javascript" src="/controllers/DeliveryController.js"></script>
+    <script type="text/javascript" src="/controllers/DeliveryListController.js"></script>
+    <script type="text/javascript" src="/controllers/ClientController.js"></script>
+    <script type="text/javascript" src="/controllers/ClientListController.js"></script>
+    <script type="text/javascript" src="/controllers/VehicleController.js"></script>
+    <script type="text/javascript" src="/controllers/VehicleListController.js"></script>
+    <script type="text/javascript" src="/controllers/OrganizationController.js"></script>
+    <script type="text/javascript" src="/controllers/OrganizationListController.js"></script>
+    <script type="text/javascript" src="/controllers/OrderController.js"></script>
+    <script type="text/javascript" src="/controllers/OrderListController.js"></script>
+    <script type="text/javascript" src="/controllers/LoginController.js"></script>
+    <script type="text/javascript" src="/controllers/MainController.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "name": "Paquete-Xpress",
+  "homepage": "https://github.com/BonettiTeam/Paquete-Xpress",
+  "authors": [
+    "Max Medina <maxmedina05@gmail.com>"
+  ],
+  "description": "Backoffice de la app paquete xpress para mantenimiento y manejo de data.",
+  "main": "index.html",
+  "keywords": [
+    "paquete"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "angular": "1.4.X",
+    "angular-resource": "*",
+    "ngstorage": "^0.3.11"
+  }
+}

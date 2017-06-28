@@ -1,0 +1,54 @@
+<!-- HEADER -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Paquete Xpress</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a ng-hide="isAuth()">Acceder</a>
+          <a class="dropdiwb-toggle" role="button" data-toggle="dropdown" ng-show="isAuth()">Hello, {{getCurrentUserName()}}</a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a ng-click="logout()">Salir</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<div class="container-fluid">
+  <div class="row">
+    <!-- SIDEBAR -->
+    <div class="no-gutter">
+      <div class="col-sm-3 col-md-2 sidebar">
+        <div class="sidebar-header">
+          <span class="user-info">{{user.name}}</span>
+          <span>{{user.email}}</span>
+        </div>
+
+        <ul class="nav nav-sidebar">
+          <li ng-class="{'active': curstate === 'dashboard'}"><a ui-sref="root.dashboard">Tablero <span class="sr-only">(current)</span></a></li>
+          <li ng-class="{'active': curstate === 'order'}"><a ui-sref="root.orderList" ng-click="setActiveTab('order')">Pedidos</a></li>
+          <li ng-class="{'active': curstate === 'vehicle'}"><a ui-sref="root.vehicleList" ng-click="setActiveTab('vehicle')">Vehículos</a></li>
+          <li ng-class="{'active': curstate === 'client'}"><a ui-sref="root.clientList" ng-click="setActiveTab('client')">Clientes</a></li>
+          <li ng-class="{'active': curstate === 'organization'}"><a ui-sref="root.organizationList" ng-click="setActiveTab('organization')">Organizaciones</a></li>
+          <li ng-class="{'active': curstate === 'user'}"><a ui-sref="root.userList" ng-click="setActiveTab('user')">Usuarios</a></li>
+          <li ng-class="{'active': curstate === 'delivery'}"><a ui-sref="root.deliveryList" ng-click="setActiveTab('delivery')">Repatidores</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- CONTENT -->
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+      <div ui-view></div>
+    </div>
+  </div>
+</div>

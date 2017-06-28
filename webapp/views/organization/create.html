@@ -1,0 +1,43 @@
+<div class="paper-form">
+  <form class="form-horizontal" novalidate>
+      <fieldset>
+          <legend>Formulario de Organización: </legend>
+          <div class="form-group">
+            <label for="id" class="col-lg-2 control-label">Id Organización</label>
+            <div class="col-lg-10">
+              <input type="text" class="form-control" id="id" disabled placeholder="0" ng-model="model._id">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="name" class="col-lg-2 control-label">Id en ERP</label>
+            <div class="col-lg-10">
+              <input type="text" class="form-control" id="name" placeholder="1001" ng-model="model.companyID">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="name" class="col-lg-2 control-label">Nombre</label>
+            <div class="col-lg-10">
+              <input type="text" class="form-control" id="name" placeholder="Company X" ng-model="model.companyNAME">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="status" class="col-lg-2 control-label">Estado</label>
+            <div class="col-lg-10">
+              <select id="status" class="form-control select" ng-model="model.status">
+                <option selected disabled>Seleccione un estado: </option>
+                <option value="disponible">disponible</option>
+                <option value="eliminado">eliminado</option>
+              </select>
+            </div>
+          </div>
+
+          <button class="btn btn-default" ui-sref="root.organizationList">Volver atras</button>
+          <button class="btn btn-default" type="cancel">Cancelar</button>
+          <button class="btn btn-primary" type="submit" ng-hide="editMode" ng-click="addModel()">Guardar</button>
+          <button class="btn btn-primary" type="submit" ng-show="editMode" ng-click="editModel()">Editar</button>
+      </fieldset>
+  </form>
+</div>

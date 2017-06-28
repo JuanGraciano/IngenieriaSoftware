@@ -1,0 +1,54 @@
+<div class="paper-form">
+  <form class="form-horizontal" novalidate>
+      <fieldset>
+
+          <legend>Formulario de Repartidor: </legend>
+
+          <div class="form-group">
+            <label for="userId" class="col-lg-2 control-label">Id Usuario</label>
+            <div class="col-lg-10">
+              <input type="text" class="form-control" id="userId" disabled placeholder="0" ng-model="user._id">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="name" class="col-lg-2 control-label">Nombre</label>
+            <div class="col-lg-10">
+              <input type="text" class="form-control" id="name" placeholder="Jose" ng-model="user.name" disabled>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="username" class="col-lg-2 control-label">Nombre de Usuario</label>
+            <div class="col-lg-10">
+              <input type="text" class="form-control" id="username" placeholder="jperez" ng-model="user.username" disabled>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="vehicle" class="col-lg-2 control-label">Vehiculo</label>
+            <div class="col-lg-10">
+              <select id="vehicle" class="form-control select" ng-model="user.vehicle"
+                ng-options="item as item.chassis for item in vehicles">
+                <!-- <option ng-repeat="item in vehicles" value="{{item._id}}">{{item.chassis}}</option> -->
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="status" class="col-lg-2 control-label">Estado</label>
+            <div class="col-lg-10">
+              <select id="status" class="form-control select" ng-model="user.status">
+                <option selected disabled>Seleccione un estado</option>
+                <option value="disponible">disponible</option>
+                <option value="ocupado`">ocupado</option>
+              </select>
+            </div>
+          </div>
+
+          <button class="btn btn-default" ui-sref="root.deliveryList">Volver atras</button>
+          <button class="btn btn-primary" type="cancel">Cancelar</button>
+          <button class="btn btn-primary" type="submit" ng-show="editMode" ng-click="editModel()">Editar</button>
+      </fieldset>
+  </form>
+</div>

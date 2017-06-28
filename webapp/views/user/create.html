@@ -1,0 +1,80 @@
+<div class="paper-form">
+  <form class="form-horizontal" novalidate>
+      <fieldset>
+
+          <legend>Formulario de Usuario: </legend>
+
+          <div class="form-group">
+            <label for="userId" class="col-lg-2 control-label">Id Usuario</label>
+            <div class="col-lg-10">
+              <input type="text" class="form-control" id="userId" disabled placeholder="0" ng-model="user._id">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="name" class="col-lg-2 control-label">Nombre</label>
+            <div class="col-lg-10">
+              <input ng-change="makeUsername()" type="text" class="form-control" id="name" placeholder="Jose Perez" ng-model="user.name">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="username" class="col-lg-2 control-label">Nombre de Usuario</label>
+            <div class="col-lg-10">
+              <input type="text" class="form-control" id="username" placeholder="Perez" ng-model="user.username">
+            </div>
+          </div>
+
+          <!-- <div class="form-group">
+            <label for="phone" class="col-lg-2 control-label">Telefono</label>
+            <div class="col-lg-10">
+              <input type="tel" class="form-control" id="phone" placeholder="8091235555" ng-model="user.phone">
+            </div>
+          </div> -->
+
+          <div class="form-group">
+            <label for="email" class="col-lg-2 control-label">E-Mail</label>
+            <div class="col-lg-10">
+              <input type="email" class="form-control" id="email" placeholder="jose.perez@example.com" ng-model="user.email">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="password" class="col-lg-2 control-label">Password</label>
+            <div class="col-lg-10">
+              <input type="password" class="form-control" id="password" placeholder="mysecretpassword" ng-model="user.password">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="role" class="col-lg-2 control-label">Rol</label>
+            <div class="col-lg-10">
+              <select id="role" class="form-control select" ng-model="user.role">
+                <option selected disabled>Seleccione un rol</option>
+                <option value="vendedor">vendedor</option>
+                <option value="repartidor">repartidor</option>
+                <option value="gerente de ventas">gerente de ventas</option>
+                <option value="administrador">administrador</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="status" class="col-lg-2 control-label">Estado</label>
+            <div class="col-lg-10">
+              <select id="status" class="form-control select" ng-model="user.status">
+                <option selected disabled>Seleccione un estado</option>
+                <option value="disponible">disponible</option>
+                <option value="ocupado">ocupado</option>
+                <option value="eliminado">eliminado</option>
+              </select>
+            </div>
+          </div>
+
+          <button class="btn btn-default" ui-sref="root.userList">Volver atras</button>
+          <button class="btn btn-default" type="cancel">Cancelar</button>
+          <button class="btn btn-primary" type="submit" ng-hide="editMode" ng-click="addUser()">Guardar</button>
+          <button class="btn btn-primary" type="submit" ng-show="editMode" ng-click="editUser()">Editar</button>
+      </fieldset>
+  </form>
+</div>

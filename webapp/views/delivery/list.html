@@ -1,0 +1,37 @@
+<h2>Manejo de Repartidores</h2>
+
+<!-- Filter div  -->
+<div class="row">
+    <form class="form-inline">
+        <div class="form-group">
+            <label for="searchfilter">Buscador </label>
+            <input type="text" class="form-control" id="searchfilter" placeholder="Jose Perez" ng-model="query">
+        </div>
+
+        <button type="submit" class="btn btn-default">Buscar</button>
+    </form>
+</div>
+
+<div class="row listview">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Estado</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in deliveries | filter: query">
+                <td>{{item._id}}</td>
+                <td>{{item.name + " " + item.lastname}}</td>
+                <td>{{item.status}}</td>
+                <td>
+                    <button class="btn btn-default" ui-sref="root.deliveryCreate({id: item._id})">Ver</button>
+                    <button class="btn btn-raised btn-danger" ng-click="delete(item._id)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

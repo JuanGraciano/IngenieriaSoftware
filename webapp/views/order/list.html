@@ -1,0 +1,41 @@
+<h2>Manejo de Ordenes</h2>
+<!-- Filter div  -->
+<div class="row">
+    <form class="form-inline">
+        <div class="form-group">
+            <label for="searchfilter">Buscador </label>
+            <input type="text" class="form-control" id="searchfilter" placeholder="Order#: 1234">
+        </div>
+        <button type="submit" class="btn btn-default">Buscar</button>
+    </form>
+</div>
+<!-- List View -->
+<div class="row listview">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+              <th>Id Order</th>
+              <th>Vendedor</th>
+              <th>Cliente</th>
+              <th>Ubicacion</th>
+              <th>Fecha</th>
+              <th>Estado</th>
+              <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="order in orders | filter: query">
+              <td>{{order.Id}}</td>
+              <td></td>
+              <td>{{order.CustomerRef.name}}</td>
+              <td></td>
+              <td>{{order.TxnDate}}</td>
+              <td></td>
+                <td>
+                    <button class="btn btn-default" ui-sref="root.orderCreate({id: order.Id})">Ver</button>
+                    <!-- <button class="btn btn-raised btn-danger" ng-click="deleteModel(item._id)">Eliminar</button> -->
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

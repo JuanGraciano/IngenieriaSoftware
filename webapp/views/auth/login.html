@@ -1,0 +1,26 @@
+<style>
+    body {
+        background-color: #eee;
+    }
+</style>
+<!--
+<div class="logo">
+    <img class="logo-img" src="../../resources/images/Xpress_shadow.png">
+</div> -->
+
+
+    <div class="panel panel-primary signin-card">
+        <div class="panel-heading">
+            <h3 class="panel-title">Ingresar</h3>
+        </div>
+        <div class="panel-body">
+            <form class="form-signin">
+                <label for="username" class="sr-only">Nombre de usuario</label>
+                <input ng-model="username" type="text" id="username" class="form-control" placeholder="jose.perez" required autofocus>
+                <label for="password" class="sr-only">Password</label>
+                <input ng-model="password" type="password" id="password" class="form-control" placeholder="Password" required>
+
+                <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="login(username, password)">Acceder</button>
+            </form>
+        </div>
+    </div>

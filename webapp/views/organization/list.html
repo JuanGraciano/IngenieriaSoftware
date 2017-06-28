@@ -1,0 +1,34 @@
+<h2>Manejo de Organizaciones</h2>
+<!-- Filter div  -->
+<div class="row">
+    <form class="form-inline">
+        <div class="form-group">
+            <label for="searchfilter">Buscador </label>
+            <input type="text" class="form-control" id="searchfilter" placeholder="Organización">
+        </div>
+        <button type="submit" class="btn btn-default">Buscar</button>
+        <button class="btn btn-default pull-right" ui-sref="root.organizationCreate">Crear Organización</button>
+    </form>
+</div>
+
+<div class="row listview">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id Organización</th>
+                <th>Nombre</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in organizations | filter: query">
+                <td>{{item.companyID}}</td>
+                <td>{{item.companyNAME}}</td>
+                <td>
+                    <button class="btn btn-default" ui-sref="root.organizationCreate({id: item._id})">Ver</button>
+                    <button class="btn btn-raised btn-danger" ng-click="deleteModel(item._id)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
